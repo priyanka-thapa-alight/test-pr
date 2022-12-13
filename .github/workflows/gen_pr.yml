@@ -1,0 +1,20 @@
+name: hello-world
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+
+jobs:
+  issue_validate:
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue Forms Body Parser
+        id: parse
+        uses: zentered/issue-forms-body-parser@v1.4.3
+      - run: echo "${{ steps.parse.outputs.data }}"
