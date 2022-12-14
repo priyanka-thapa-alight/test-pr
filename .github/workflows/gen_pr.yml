@@ -25,3 +25,4 @@ jobs:
           title: "Update issue forms"
           body: "${{ steps.parse.outputs.data }}"
           branch: "${{ steps.parse.outputs.data.from_branch }}"
+          base: 'main'
