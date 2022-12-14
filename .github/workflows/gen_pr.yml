@@ -19,7 +19,7 @@ jobs:
         uses: zentered/issue-forms-body-parser@v1.4.3
       - run: echo "${{ steps.parse.outputs.data }}"
       - name: Create Pull request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v3
         with:
           commit-message: "Update issue forms"
           title: "Update issue forms"
