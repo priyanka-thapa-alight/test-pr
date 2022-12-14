@@ -1,4 +1,4 @@
-name: hello-world
+name: Create PR
 on:
   issues:
     types: [opened]
@@ -24,7 +24,7 @@ jobs:
           commit-message: "Update issue forms"
           title: "Update issue forms"
           body: "${{ steps.parse.outputs.data }}"
-          branch: "update-issue-forms"
+          branch: "${{ steps.parse.outputs.data.from_branch }}"
           labels: "update-issue-forms"
           reviewers: "priyanka-thapa-alight"
           assignees: "priyanka-thapa-alight"
